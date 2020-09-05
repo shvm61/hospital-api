@@ -9,7 +9,17 @@ module.exports.register = async function (req, res) {
     });
   } catch (error) {
     // console.log( err);
-    return res.status(500).json({ response: "failed", err: error });
+    if (error.code === 11000) {
+      const patient = await Patient.findOne({ phone: req.body.phone }).select([
+        "phone",
+        "name",
+        "-_id",
+      ]);
+      return res.status(200).json({
+        msg: "patient already exists",
+        patient,
+      });
+    } else return res.status(500).json({ response: "failed", err: error });
   }
 };
 
