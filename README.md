@@ -2,7 +2,7 @@
 
 ## Overview:
 
-Sample API for the doctors to manage COVID-19 patients .
+Sample API for the doctors to manage COVID-19 patients.
 
 
 ## Routes:
@@ -24,8 +24,10 @@ Sample API for the doctors to manage COVID-19 patients .
 #### Other:
 
 - /reports/:status --> Generate all the report based on a particular status.
-
-
+### Tech Stack : 
+- Node, Express, MongoDB.
+- Passport is used for Authentication (JWT)
+ 
 ## Project Structure:
 
 ```
